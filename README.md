@@ -3,34 +3,20 @@
 A lightweight and retro-style project manager made with Python and Tkinter.
 
 Inspired by old-school Windows XP vibes, but focused on developers who want a simple way to manage project files, extensions and folders.
+(the code is english and spanish)
 
 ---
 
 # ✨ Features
 
-- 📂 Open projects easily
-- 🔎 Scan project files automatically
-- 🧩 Custom file extensions
-- ⚙ Settings window
-- 💾 JSON config system
-- 🖱 Double click to open files
-- 🦆 Retro UI style
-- 🪶 Lightweight and simple
-
----
-
-# 📸 Preview
-
-```plaintext
-🦆 DuckyPG
-
-📂 my_project
-
-main.py
-app.py
-style.css
-README.md
-```
+- Open projects easily
+- Scan project files automatically
+- Custom file extensions
+- Settings window
+- JSON config system
+- Double click to open files
+- Retro UI style
+- Lightweight and simple
 
 ---
 
@@ -39,7 +25,7 @@ README.md
 ## Clone repository
 
 ```bash
-git clone https://github.com/yourusername/duckypg.git
+git clone https://github.com/BluDotPou/DuckyPG.git
 ```
 
 ## Open folder
@@ -62,6 +48,7 @@ python main.py
 - Tkinter
 - JSON
 - OS module
+- Ducks (lol)
 
 ---
 
@@ -109,20 +96,19 @@ Example:
 
 # 💡 Future Ideas
 
-- 🌙 Dark mode
-- 📜 File history
-- 🧠 Plugin system
-- 🗂 Tabs
-- 🖥 Terminal integration
-- 🔍 Search system
-- 🧩 Themes
-- ☁ Cloud sync
+- Dark mode
+- File history
+- Plugin system
+- Tabs
+- Terminal integration
+- Search system
+- Themes
 
 ---
 
 # 📜 License
 
-MIT License © 2026 José Pato
+MIT License © 2026 BluDot
 
 ---
 
@@ -130,4 +116,6 @@ MIT License © 2026 José Pato
 
 Because programming should feel creative, lightweight and fun.
 
-No need 16GB of RAM
+No need 16GB of RAM or a NVIDIA GeForce RTX 5090
+
+have fun :)
