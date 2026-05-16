@@ -15,3 +15,7 @@ venv/
 .env/
 
 *.log
+
+dist/
+build/
+DuckyPG.spec
