@@ -118,6 +118,7 @@ Button(
 Button(
     sidebar,
     text="📝 Historial",
+    command=lambda: abrir_historial(root),
     font=("Tahoma", 10),
     relief="raised",
     width=20

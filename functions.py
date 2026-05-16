@@ -68,6 +68,20 @@ def abrir_archivo(event, lista_archivos, proyecto_state):
         )
         subprocess.Popen(ruta_completa, shell=True)
 
+def abrir_historial(root):
+    ventana = Toplevel(root)
+    ventana.title("Historial")
+    ventana.geometry("320x520")
+    ventana.configure(bg="#dfe8f6")
+    ventana.resizable(True, True)
+
+    Label(
+        ventana,
+        text="Comming soon",
+        bg="#dfe8f6",
+        fg="black",
+        font=("Tahoma", 14, "bold")
+    ).pack(pady=10)
 
 # -------------- lo prncipla n1 -----------------
 def abrir_config(root, ext_var, proyecto_state, lista_archivos):
