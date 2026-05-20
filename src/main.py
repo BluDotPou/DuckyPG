@@ -1,44 +1,48 @@
 from tkinter import *
 from functions import *
 
+#---- main window ----
 root = Tk()
 root.title("DuckyPG")
 root.geometry("900x500")
 root.configure(bg="#245EDB")
 
-#estado
-config = cargar_config()
+#load saved config
+config = load_config()
 
-proyecto_state = {
-    "carpeta": config["last_project"]
+#current project state
+project_state = {
+    "folder": config["last_project"]
 }
 
-#extensiones por defecto (por si no sabias tu que lees esto)
+#visible file extensions
 ext_var = StringVar(
     value=", ".join(config["extensions"])
 )
 
-# ----- barra de arriba ----
+# top bar
 topbar = Frame(root, bg="#0C2D83", height=40)
 topbar.pack(fill=X)
 
-titulo = Label(
+# app title (pi po po pi po po pi pu)
+title = Label(
     topbar,
     text="🦆 DuckyPG",
     bg="#0C2D83",
     fg="white",
     font=("Tahoma", 14, "bold")
 )
-titulo.pack(side=LEFT, padx=10, pady=5)
+title.pack(side=LEFT, padx=10, pady=5)
 
-#-- menu lateral ----
+# left sidebar
 sidebar = Frame(root, bg="#dfe8f6", width=200)
 sidebar.pack(side=LEFT, fill=Y)
 
-# -- la parte del el centro donde se ven todo los archivos y esas cosas que nececita una persona como tu el que lees esto para poder ser mas ordenado---
+# main content area
 main = Frame(root, bg="white")
 main.pack(side=LEFT, fill=BOTH, expand=True)
 
+# welcome text
 Label(
     main,
     text="Welcome to DuckyPG",
@@ -47,23 +51,26 @@ Label(
     font=("Tahoma", 20, "bold")
 ).pack(pady=30)
 
-ruta_label = Label(
+# current project path
+path_label = Label(
     main,
-    text="📂 No projects open",
+    text="📂 no projects open",
     bg="white",
     fg="gray",
     font=("Tahoma", 10)
 )
-ruta_label.pack(pady=10)
+path_label.pack(pady=10)
 
+# extensions label
 Label(
     main,
-    text="Visible extensions:",
+    text="visible extensions:",
     bg="white",
     fg="black",
     font=("Tahoma", 10, "bold")
 ).pack(pady=(10, 0))
 
+# show current extensions
 Label(
     main,
     textvariable=ext_var,
@@ -72,77 +79,84 @@ Label(
     font=("Tahoma", 10)
 ).pack(pady=(0, 10))
 
-lista_archivos = Listbox(
+# file list
+file_list = Listbox(
     main,
     font=("Consolas", 10)
 )
-lista_archivos.pack(fill=BOTH, expand=True, padx=20, pady=10)
-lista_archivos.bind(
-    "<Double-Button-1>", #doble click hacer abrir
-    lambda event: abrir_archivo(
-        event,
-        lista_archivos,
-        proyecto_state
-    )
+file_list.pack(fill=BOTH, expand=True, padx=20, pady=10)
+
+# open file with double click
+file_list.bind(
+    "<Double-Button-1>",
+    lambda event: open_file(event, file_list, project_state)
 )
 
-if proyecto_state["carpeta"]:
-    ruta_label.config(
-        text=f"📂 {proyecto_state['carpeta']}"
+# reopen last project if it exists
+if project_state["folder"]:
+    path_label.config(
+        text=f"📂 {project_state['folder']}"
     )
 
-    actualizar_lista_archivos(
-        proyecto_state["carpeta"],
-        lista_archivos,
+    refresh_file_list(
+        project_state["folder"],
+        file_list,
         ext_var.get()
     )
 
-# --- botone ----
+# buttons :3
+
+# open projects
 Button(
     sidebar,
-    text="📂 Open proyects",
-    command=lambda: abrir_proyecto(root, ruta_label, lista_archivos, ext_var, proyecto_state),
+    text="📂 open projects",
+    command=lambda: open_project(root, path_label, file_list, ext_var, project_state),
     font=("Tahoma", 10),
     relief="raised",
     width=20
 ).pack(pady=10)
 
+# search
 Button(
     sidebar,
-    text="🔎 Search",
+    text="🔎 search",
     font=("Tahoma", 10),
     relief="raised",
     width=20
 ).pack(pady=10)
 
+# history
 Button(
     sidebar,
-    text="📝 Historial",
-    command=lambda: abrir_historial(root),
+    text="📝 history",
+    command=lambda: open_history(root),
     font=("Tahoma", 10),
     relief="raised",
     width=20
 ).pack(pady=10)
 
+# settings
 Button(
     sidebar,
-    text="⚙ Settings",
-    command=lambda: abrir_config(root, ext_var, proyecto_state, lista_archivos),
+    text="⚙ settings",
+    command=lambda: open_settings(root, ext_var, project_state, file_list),
     font=("Tahoma", 10),
     relief="raised",
     width=20
 ).pack(pady=10)
 
-# ---- lito ----
+# status bar
 status = Frame(root, bg="#C0C0C0", height=25)
 status.pack(side=BOTTOM, fill=X)
 
+# moai
 Label(
     status,
-    text="🗿🗿",
+    text="🗿",
     bg="#C0C0C0",
     fg="black",
     font=("Tahoma", 9)
 ).pack(side=LEFT, padx=5)
 
+# main loop
 root.mainloop()

@@ -3,7 +3,6 @@
 A lightweight and retro-style project manager made with Python and Tkinter.
 
 Inspired by old-school Windows XP vibes, but focused on developers who want a simple way to manage project files, extensions and folders.
-(the code is english and spanish)
 
 ---
 
@@ -49,20 +48,6 @@ python main.py
 - JSON
 - OS module
 - Ducks (lol)
-
----
-
-# 📂 Project Structure
-
-```plaintext
-duckypg/
-│
-├── main.py
-├── functions.py
-├── config.json
-├── LICENSE
-└── README.md
-```
 
 ---
 
