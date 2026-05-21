@@ -1,3 +1,5 @@
+
+![title](titleL.png)
 # DuckyPG 🦆💙
 
 A lightweight and retro-style project manager made with Python and Tkinter.
