@@ -22,23 +22,9 @@ Inspired by old-school Windows XP vibes, but focused on developers who want a si
 
 # 🚀 Installation
 
-## Clone repository
-
-```bash
-git clone https://github.com/BluDotPou/DuckyPG.git
-```
-
-## Open folder
-
-```bash
-cd duckypg
-```
-
-## Run project
-
-```bash
-python main.py
-```
+* go to releases 
+* go to the new version
+* and download the .exe
 
 ---
 
@@ -82,13 +68,13 @@ Example:
 
 # 💡 Future Ideas
 
-- Dark mode
+- **~~Dark mode~~**
 - File history
 - Plugin system
 - Tabs
 - Terminal integration
 - Search system
-- Themes
+- **~~Themes~~**
 
 ---
 
