@@ -35,7 +35,7 @@ title = Label(
 title.pack(side=LEFT, padx=10, pady=5)
 
 # left sidebar
-sidebar = Frame(root, bg="#dfe8f6", width=200)
+sidebar = Frame(root, bg="#315692", width=200)
 sidebar.pack(side=LEFT, fill=Y)
 
 # main content area
@@ -144,6 +144,16 @@ Button(
     relief="raised",
     width=20
 ).pack(pady=10)
+
+Button(
+    sidebar,
+    text="🪅 style",
+    command=lambda: open_styles(root),
+    font=("Tahoma", 10),
+    relief="raised",
+    width=20
+).pack(pady=10)
+
 
 # status bar
 status = Frame(root, bg="#C0C0C0", height=25)
